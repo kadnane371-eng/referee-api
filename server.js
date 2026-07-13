@@ -3,10 +3,13 @@ require("dotenv").config();
 const express = require("express");
 const sequelize = require("./config/database");
 
+const arbitreRoutes = require("./routes/arbitre.routes");
+
 require("./models");
 const app = express();
 
 app.use(express.json());
+app.use("/arbitres",arbitreRoutes);
 
   sequelize 
   .sync()
